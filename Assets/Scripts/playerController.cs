@@ -45,15 +45,8 @@ public class playerController : MonoBehaviour
             }
         }
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;
-
-        // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
-
-        // Player and Camera rotation
         if (canMove)
         {
             rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
